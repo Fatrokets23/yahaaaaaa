@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenangan Malik Ibrahim Movick</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+    }
+
+    /* Menyembunyikan input checkbox */
+    #kejutan-toggle {
+      display: none;
+    }
+
+    /* Gaya tombol/teks awal */
+    .tombol-kenangan {
+      display: inline-block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 18px 28px;
+      background: linear-gradient(135deg, #2b2b2b, #1f1f1f);
+      border: 2px solid #444;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      user-select: none;
+    }
+
+    .tombol-kenangan:hover {
+      transform: translateY(-3px);
+      border-color: #ff4757;
+      box-shadow: 0 8px 20px rgba(255, 71, 87, 0.3);
+    }
+
+    .petunjuk {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: normal;
+      color: #aaaaaa;
+      margin-top: 8px;
+    }
+
+    /* Kontainer kejutan (tersembunyi secara default) */
+    .konten-kejutan {
+      display: none;
+      margin-top: 25px;
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 16px;
+      border: 2px solid #ff4757;
+      animation: muncul 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* Menampilkan kejutan saat checkbox dicentang */
+    #kejutan-toggle:checked ~ .konten-kejutan {
+      display: block;
+    }
+
+    /* Menyembunyikan tombol awal setelah diklik */
+    #kejutan-toggle:checked ~ .tombol-kenangan {
+      display: none;
+    }
+
+    .gambar-kingkong {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .teks-ledek {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #ff4757;
+      letter-spacing: 3px;
+      animation: goyang 0.4s infinite alternate;
+    }
+
+    .tombol-reset {
+      display: inline-block;
+      margin-top: 15px;
+      font-size: 0.85rem;
+      color: #888;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    @keyframes muncul {
+      from {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes goyang {
+      from {
+        transform: rotate(-4deg) scale(1);
+      }
+      to {
+        transform: rotate(4deg) scale(1.08);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Checkbox pemicu interaksi -->
+    <input type="checkbox" id="kejutan-toggle">
+
+    <!-- Teks utama yang bisa diklik -->
+    <label for="kejutan-toggle" class="tombol-kenangan">
+      Kenangan Malik Ibrahim Movick
+      <span class="petunjuk">(Klik untuk membuka kenangan)</span>
+    </label>
+
+    <!-- Konten yang muncul setelah diklik -->
+    <div class="konten-kejutan">
+      <!-- Ganti URL src di bawah jika ingin memakai file gambar lokal (misal: kingkong.jpg) -->
+      <img 
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Gorille_des_plaines_de_l%27ouest_%C3%A0_l%27Espace_Zoologique.jpg/800px-Gorille_des_plaines_de_l%27ouest_%C3%A0_l%27Espace_Zoologique.jpg" 
+        alt="Kingkong Ngeledek" 
+        class="gambar-kingkong"
+      >
+      <div class="teks-ledek">HIHUw</div>
+      <label for="kejutan-toggle" class="tombol-reset">Tutup kenangan</label>
+    </div>
+  </div>
+
+</body>
+</html>
